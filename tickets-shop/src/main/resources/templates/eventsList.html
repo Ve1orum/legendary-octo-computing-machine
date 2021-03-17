@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class = "container mt-5">
+    <div th:each="elem : ${events}" class="alert alert-info mt-2">
+        <p th:text="${elem.title}"/>
+        <p th:text="${elem.date}"/>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <h1>Events List Page</h1>
+    <form action="/add-event" method="post">
+        <input type="text" name="title" placeholder="New title here" class="form-control">
+        <button type="submit" class="btn btn-success">Add new</button>
+    </form>
+</div>
+
+</body>
+</html>
